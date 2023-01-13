@@ -15,7 +15,7 @@ archives:
     format: binary
     name_template: >-
       {{ .ProjectName }}-
-      {{ .Os }}-
+      {{- title .Os }}-
       {{- if eq .Arch "amd64" }}amd64
       {{- else }}{{ .Arch }}{{ end }}
 checksum:
