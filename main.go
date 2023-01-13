@@ -13,11 +13,11 @@ func main() {
 		helpers.Usage()
 		os.Exit(0)
 	}
-	feedUrl := os.Args[1]
+	feedURL := os.Args[1]
 
-	resp, err := helpers.ReadWithClient(feedUrl)
+	resp, err := helpers.ReadWithClient(feedURL)
 	if err != nil {
-		helpers.Exit("failed to read %s: %v", feedUrl, err)
+		helpers.Exit("failed to read %s: %v", feedURL, err)
 	}
 	defer resp.Body.Close()
 
