@@ -13,9 +13,11 @@ builds:
 archives:
   - 
     format: binary
-    name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
-    replacements:
-      amd64: amd64
+    name_template: >-
+      {{ .ProjectName }}-
+      {{ .Os }}-
+      {{- if eq .Arch "amd64" }}amd64
+      {{- else }}{{ .Arch }}{{ end }}
 checksum:
   name_template: 'checksums.txt'
 snapshot:
